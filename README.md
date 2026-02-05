@@ -1,114 +1,139 @@
-# MiniSocial
+# MiniSocial 🚀
 
-MiniSocial is a mini social networking web application built using Node.js, Express, and MongoDB.  
-The project demonstrates the use of NoSQL databases, RESTful APIs, and JWT-based authentication.
-
----
-
-## 🚀 Features
-
-- User registration and login
-- JWT authentication and authorization
-- Create, view, and delete posts
-- Like and unlike posts
-- Comment system
-- Soft delete for posts and comments
-- Pagination and sorting
-- MongoDB references and population
-- Optimized counters for likes and comments
+MiniSocial is a **minimal social media web application** built as an educational project.  
+It demonstrates core concepts of **modern web development**, including authentication, CRUD operations, drafts, user profiles, and trending content — all wrapped in a clean **Apple-style dark UI**.
 
 ---
 
-## 🛠 Technologies Used
+## ✨ Features
+
+### 🔐 Authentication
+- User registration and login (JWT-based)
+- Secure password hashing with bcrypt
+- Persistent sessions using localStorage
+
+### 📰 Feed
+- Public feed with published posts
+- Like / Unlike posts
+- Comment system with real-time updates
+
+### ✍️ Create Posts
+- Create and publish posts
+- Add tags to posts
+- Save posts as **Drafts**
+
+### 🗂 Drafts
+- Private drafts (visible only to the author)
+- Publish drafts later
+- Delete drafts
+
+### 👤 My Posts
+- View all your posts (published + drafts)
+- Status badge (`published / draft`)
+
+### 🙍 User Profile
+- View profile information
+- Update bio
+- Update avatar using image URL
+
+### 🔍 Explore / Trending
+- Explore trending posts
+- Filter by:
+  - Time period (7 / 30 / 90 days)
+  - Tags
+  - Search (title + content)
+- Sorted by popularity (likes & comments)
+
+### 🎨 UI / Design
+- Minimal **Apple-inspired dark design**
+- Blue accent buttons (iOS style)
+- Responsive layout (desktop & mobile)
+- Clean, readable typography
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- HTML5
+- CSS3 (custom, Apple-style dark theme)
+- Vanilla JavaScript (no frameworks)
 
 ### Backend
 - Node.js
 - Express.js
-- MongoDB
-- Mongoose
-- JSON Web Token (JWT)
-- bcrypt
-- dotenv
-
-### Frontend
-- HTML
-- CSS
-- Vanilla JavaScript (fetch API)
+- MongoDB + Mongoose
+- JWT (authentication)
+- bcrypt (password hashing)
 
 ---
 
-## 🗄 Database Design
+## 📁 Project Structure
 
-The application uses MongoDB with the following collections:
-- Users
-- Posts
-- Comments
+MiniSocial/
+├── client/
+│ ├── index.html
+│ ├── styles.css
+│ └── app.js
+│
+├── server/
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ ├── middleware/
+│ └── index.js
+│
+└── README.md
 
-Relationships between collections are implemented using ObjectId references and populated using Mongoose.
 
 ---
 
-## ⚙️ Installation and Setup
+## ⚙️ Setup & Run
 
-1. Clone the repository:
+### 1️⃣ Clone repository
 ```bash
 git clone https://github.com/your-username/minisocial.git
+cd minisocial
 
-Install dependencies:
-
+2️⃣ Install dependencies
+cd server
 npm install
 
-
-Create .env file in the server folder:
-
+3️⃣ Environment variables (.env)
 PORT=4000
-MONGODB_URI=mongodb://127.0.0.1:27017/minisocial
+MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 
-
-Run the server:
-
+4️⃣ Run server
 npm run dev
-```
-🔗 API Overview
-Authentication
 
-POST /api/auth/register – Register user
+5️⃣ Open client
 
-POST /api/auth/login – Login user
+Open client/index.html in your browser
+(or serve it via Live Server)
 
-GET /api/auth/me – Get current user
+🎓 Educational Purpose
 
-Posts
+This project was created for learning and academic purposes to demonstrate:
 
-POST /api/posts – Create post
+REST API design
 
-GET /api/posts – Get posts feed
+Authentication & authorization
 
-POST /api/posts/:id/like – Like post
+NoSQL database usage
 
-DELETE /api/posts/:id/like – Unlike post
+Frontend-backend integration
 
-DELETE /api/posts/:id – Delete post (soft delete)
+UI/UX fundamentals
 
-Comments
+🚧 Future Improvements
 
-POST /api/posts/:id/comments – Add comment
+Pagination & infinite scroll
 
-GET /api/posts/:id/comments – Get comments
+Image upload instead of URL
 
-DELETE /api/comments/:id – Delete comment
+Follow system
 
-📈 Optimization Techniques
+Notifications
 
-MongoDB indexes on frequently queried fields
-
-Soft delete instead of hard delete
-
-Counters for likes and comments instead of aggregation pipeline
-Pagination using skip and limit
-
-limit
-
-👤 Author
-Aidos
+Deployment (Docker / Vercel / Render)
