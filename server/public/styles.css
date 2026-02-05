@@ -1,0 +1,172 @@
+:root{
+  --bg:#000000;
+  --surface:#0b0b0d;          /* почти как apple dark sections */
+  --card:#111114;
+  --border:rgba(255,255,255,.10);
+
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.60);
+
+  --blue:#0A84FF;             /* iOS/Apple blue */
+  --blueHover:#3395ff;
+
+  --radius:18px;
+}
+
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* top bar like apple: blur + thin border */
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:14px 18px;
+  position:sticky;
+  top:0;
+  z-index:10;
+
+  background:rgba(0,0,0,.72);
+  backdrop-filter:saturate(180%) blur(18px);
+  -webkit-backdrop-filter:saturate(180%) blur(18px);
+
+  border-bottom:1px solid var(--border);
+}
+
+.brand{
+  font-weight:650;
+  letter-spacing:.2px;
+}
+
+/* tabs like pill buttons */
+.tabs{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tab{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:transparent;
+  color:var(--muted);
+}
+.tab:hover{border-color:rgba(255,255,255,.20); color:rgba(255,255,255,.80)}
+.tab.active{
+  color:var(--text);
+  border-color:rgba(255,255,255,.24);
+  background:rgba(255,255,255,.06);
+}
+
+.container{max-width:900px;margin:22px auto;padding:0 14px}
+
+.card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;
+  margin-bottom:14px;
+}
+
+/* 2 columns on desktop */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+
+/* inputs minimal */
+input,textarea,select{
+  width:100%;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:#0a0a0c;
+  color:var(--text);
+  margin:8px 0;
+  outline:none;
+}
+
+textarea{min-height:100px;resize:vertical}
+
+input:focus,textarea:focus,select:focus{
+  border-color:rgba(10,132,255,.75);
+  box-shadow:0 0 0 4px rgba(10,132,255,.18);
+}
+
+/* buttons: apple-like */
+button{
+  padding:10px 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.06);
+  color:var(--text);
+  cursor:pointer;
+}
+
+button:hover{background:rgba(255,255,255,.09)}
+button:active{transform:translateY(1px)}
+
+button.ghost{
+  background:transparent;
+  border-color:rgba(255,255,255,.12);
+  color:var(--muted);
+}
+button.ghost:hover{border-color:rgba(255,255,255,.20); color:rgba(255,255,255,.80)}
+
+/* primary blue button */
+button.primary{
+  background:var(--blue);
+  border-color:rgba(10,132,255,.9);
+  color:white;
+}
+button.primary:hover{background:var(--blueHover)}
+button.primary:active{transform:translateY(1px)}
+
+/* layout helpers */
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.hidden{display:none}
+.msg{color:var(--muted);min-height:18px}
+
+/* feed */
+.feed{display:flex;flex-direction:column;gap:12px}
+
+.post{
+  padding:16px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:var(--radius);
+  background:var(--card);
+}
+
+.post h3{margin:0 0 8px;font-weight:600}
+
+.meta{font-size:12px;color:var(--muted);margin-bottom:10px}
+
+.tags{font-size:12px;color:rgba(10,132,255,.85)}
+
+.actions2{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.small{padding:8px 10px;font-size:13px;border-radius:12px}
+
+/* comments */
+.comments{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.comment{
+  padding:12px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:14px;
+  background:#0b0b0d;
+}
+
+/* simple badge */
+.badge{
+  display:inline-block;
+  padding:3px 8px;
+  border-radius:999px;
+  font-size:12px;
+  margin-left:6px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.06);
+  color:rgba(255,255,255,.80);
+}
+
+/* responsive */
+@media (max-width:720px){
+  .grid2{grid-template-columns:1fr}
+}
