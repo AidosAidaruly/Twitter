@@ -1,139 +1,191 @@
-# MiniSocial 🚀
+# MiniSocial – Social Media Platform
 
-MiniSocial is a **minimal social media web application** built as an educational project.  
-It demonstrates core concepts of **modern web development**, including authentication, CRUD operations, drafts, user profiles, and trending content — all wrapped in a clean **Apple-style dark UI**.
+## Overview
 
----
+MiniSocial is a full-stack social media web application inspired by modern social networking platforms. The project allows users to create and manage posts, interact through likes and comments, save private drafts, customize profiles, and discover trending content.
 
-## ✨ Features
+The application demonstrates practical implementation of authentication, authorization, database management, RESTful API development, and frontend-backend integration using modern web technologies.
 
-### 🔐 Authentication
-- User registration and login (JWT-based)
-- Secure password hashing with bcrypt
-- Persistent sessions using localStorage
+## Key Features
 
-### 📰 Feed
-- Public feed with published posts
-- Like / Unlike posts
-- Comment system with real-time updates
+### Authentication & Security
 
-### ✍️ Create Posts
-- Create and publish posts
-- Add tags to posts
-- Save posts as **Drafts**
+* User registration and login
+* JWT-based authentication
+* Password hashing using bcrypt
+* Protected API routes
+* Persistent user sessions
 
-### 🗂 Drafts
-- Private drafts (visible only to the author)
-- Publish drafts later
-- Delete drafts
+### Content Management
 
-### 👤 My Posts
-- View all your posts (published + drafts)
-- Status badge (`published / draft`)
+* Create posts
+* Edit posts
+* Delete posts
+* Publish content
+* Draft management system
 
-### 🙍 User Profile
-- View profile information
-- Update bio
-- Update avatar using image URL
+### Social Interaction
 
-### 🔍 Explore / Trending
-- Explore trending posts
-- Filter by:
-  - Time period (7 / 30 / 90 days)
-  - Tags
-  - Search (title + content)
-- Sorted by popularity (likes & comments)
+* Like and unlike posts
+* Comment system
+* Public content feed
+* User-generated content
 
-### 🎨 UI / Design
-- Minimal **Apple-inspired dark design**
-- Blue accent buttons (iOS style)
-- Responsive layout (desktop & mobile)
-- Clean, readable typography
+### User Profiles
 
----
+* Custom user biography
+* Avatar customization
+* Personal post management
+* User account information
 
-## 🛠 Tech Stack
+### Explore & Trending
 
-### Frontend
-- HTML5
-- CSS3 (custom, Apple-style dark theme)
-- Vanilla JavaScript (no frameworks)
+* Trending post discovery
+* Search functionality
+* Tag filtering
+* Popularity ranking
+* Time-based filtering
+
+### User Experience
+
+* Responsive design
+* Apple-inspired dark theme
+* Mobile-friendly interface
+* Clean and intuitive navigation
+
+## Technologies Used
 
 ### Backend
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- JWT (authentication)
-- bcrypt (password hashing)
 
----
+* Node.js
+* Express.js
+* MongoDB
+* Mongoose
+* JWT Authentication
+* bcrypt
 
-## 📁 Project Structure
+### Frontend
 
+* HTML5
+* CSS3
+* Vanilla JavaScript
+
+## System Architecture
+
+The project follows a layered architecture:
+
+* Client Layer (Frontend)
+* API Layer (Express.js)
+* Business Logic Layer
+* Database Layer (MongoDB)
+
+This architecture improves maintainability, scalability, and separation of concerns.
+
+## Project Structure
+
+```text
 MiniSocial/
 ├── client/
-│ ├── index.html
-│ ├── styles.css
-│ └── app.js
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
 │
 ├── server/
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ ├── middleware/
-│ └── index.js
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   └── index.js
 │
 └── README.md
+```
+
+## Core Functionality
+
+### Authentication Module
+
+Handles:
+
+* Registration
+* Login
+* JWT token generation
+* User authorization
+
+### Posts Module
+
+Supports:
+
+* Creating posts
+* Editing posts
+* Deleting posts
+* Publishing content
+* Draft management
+
+### Social Module
+
+Supports:
+
+* Likes
+* Comments
+* User interactions
+* Content engagement
+
+### Trending Module
+
+Provides:
+
+* Popularity-based ranking
+* Search functionality
+* Tag filtering
+* Time-period analysis
+
+## Learning Outcomes
+
+Through this project, I gained practical experience in:
+
+* Full-stack web development
+* REST API design
+* Authentication and authorization
+* JWT implementation
+* Password security using bcrypt
+* MongoDB database design
+* Mongoose ODM
+* User session management
+* Search and filtering systems
+* Software architecture design
+* Frontend-backend integration
+
+## My Contribution
+
+I independently implemented:
+
+* Backend architecture
+* MongoDB database integration
+* JWT authentication system
+* Password hashing and security
+* CRUD functionality
+* Draft management system
+* Comment and like functionality
+* Trending and search features
+* User profile management
+* Frontend user interface
+* Error handling and validation
+
+## Future Improvements
+
+* Follow and follower system
+* Real-time notifications
+* Image upload support
+* Direct messaging
+* WebSocket integration
+* Infinite scrolling
+* Content recommendation system
+* Docker deployment
+* Cloud hosting
+* Mobile application version
 
 
----
 
-## ⚙️ Setup & Run
+## License
 
-### 1️⃣ Clone repository
-```bash
-git clone https://github.com/your-username/minisocial.git
-cd minisocial
-
-2️⃣ Install dependencies
-cd server
-npm install
-
-3️⃣ Environment variables (.env)
-PORT=4000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_secret_key
-
-4️⃣ Run server
-npm run dev
-
-5️⃣ Open client
-
-Open client/index.html in your browser
-(or serve it via Live Server)
-
-🎓 Educational Purpose
-
-This project was created for learning and academic purposes to demonstrate:
-
-REST API design
-
-Authentication & authorization
-
-NoSQL database usage
-
-Frontend-backend integration
-
-UI/UX fundamentals
-
-🚧 Future Improvements
-
-Pagination & infinite scroll
-
-Image upload instead of URL
-
-Follow system
-
-Notifications
-
-Deployment (Docker / Vercel / Render)
+This project was developed for educational purposes.
